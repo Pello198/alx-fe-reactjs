@@ -8,19 +8,23 @@ import Footer from './components/Footer.jsx';
 import WelcomeMessage from './components/WelcomeMessage.jsx';
 import MainContent from './components/MainContent.jsx';
 import UserProfile from './components/UserProfile.jsx';
+import Card from './components/Card.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <WelcomeMessage />
-      <Header />
-      <MainContent />
-      <Footer />
-      <UserProfile name="Alice" age="25" bio="Loves hiking and photography." />
+    <div className="App">
+      <Card>  <WelcomeMessage /> </Card>
+      <Card>  <Header /> </Card>
+      <Card title= "My Favorite Cities">  <MainContent/> </Card>
+      <Card>  <UserProfile  name="Alice" age={25} bio="Loves hiking" textColor="blue" /> </Card>
+      <Card>  <Footer /> </Card>
+    
      
-    </>
+     
+      
+    </div>
   )
 }
 
