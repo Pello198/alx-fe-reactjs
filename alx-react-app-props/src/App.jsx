@@ -7,7 +7,7 @@ import Footer from './components/Footer.jsx';
 
 import WelcomeMessage from './components/WelcomeMessage.jsx';
 import MainContent from './components/MainContent.jsx';
-import ProfilePage from './components/ProfilePage.jsx';
+import UserProfile from './components/UserProfile.jsx';
 import Card from './components/Card.jsx';
 import UserContext from './UserContext.js';
 function App() {
@@ -20,9 +20,9 @@ function App() {
       <Card>  <WelcomeMessage /> </Card>
       <Card>  <Header /> </Card>
       <Card title= "My Favorite Cities">  <MainContent/> </Card>
-      <UserContext.Provider value={userdata}>
-      <Card>  <ProfilePage /> </Card>
-      </UserContext.Provider>
+      <UserContext.Provider value={userData}>
+      <UserProfile />
+    </UserContext.Provider>
       <Card>  <Footer /> </Card>
     
      
