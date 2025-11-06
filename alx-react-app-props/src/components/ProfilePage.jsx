@@ -1,9 +1,9 @@
 import React from 'react'
 import UserInfo from './UserInfo.jsx';
-const UserProfile = () => {
+const ProfilePage = () => {
 
     return <UserInfo />;
   
 }
 
-export default UserProfile
+export default ProfilePage
