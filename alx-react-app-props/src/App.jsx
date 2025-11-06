@@ -9,7 +9,7 @@ import WelcomeMessage from './components/WelcomeMessage.jsx';
 import MainContent from './components/MainContent.jsx';
 import UserProfile from './components/UserProfile.jsx';
 import Card from './components/Card.jsx';
-import UserContext from './UserContext.js';
+import UserContext from './components/UserContext.js';
 function App() {
   const [count, setCount] = useState(0)
   const userdata = {
