@@ -18,7 +18,7 @@ function App() {
       <Card>  <WelcomeMessage /> </Card>
       <Card>  <Header /> </Card>
       <Card title= "My Favorite Cities">  <MainContent /> </Card>
-      <Card>  <UserProfile  name="Alice" age={25} bio="Loves hiking" textColor="blue" /> </Card>
+      <Card>  <UserProfile  name="Alice" age={25} bio="Loves hiking and photography" textColor="blue" /> </Card>
       <Card>  <Footer /> </Card>
     
      
