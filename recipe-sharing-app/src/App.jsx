@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useRecipeStore } from './stores/recipeStore';
+import { useRecipeStore } from './components/recipeStore';
 import { Routes, Route, Link } from 'react-router-dom';
 
 import SearchBar from './components/SearchBar';
