@@ -22,6 +22,11 @@ export default function Search() {
       const data = await fetchAdvancedUserData(username, location, minRepos, 1);
       setUsers(data.items);
       setTotalCount(data.total_count);
+
+      if (data.items.length === 0) {
+        setError("Looks like we can't find the user");
+      }
+
     } catch (err) {
       setError("No users found with the given criteria");
     } finally {
@@ -76,6 +81,11 @@ export default function Search() {
 
       {loading && <p>Loading...</p>}
       {error && <p className="text-red-500">{error}</p>}
+
+      {/* NEW empty-results message */}
+      {!loading && users.length === 0 && !error && (
+        <p className="text-gray-500">Looks like we can't find the user</p>
+      )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {users.map((user) => (
