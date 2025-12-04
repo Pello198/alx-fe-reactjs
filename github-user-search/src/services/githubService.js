@@ -2,7 +2,7 @@ import axios from "axios";
 
 const token = import.meta.env.VITE_APP_GITHUB_API_KEY;
 
-export const fetchAdvancedUserData = async (username, location, minRepos, page = 1) => {
+export const fetchUserData = async (username, location, minRepos, page = 1) => {
   let query = username ? `${username} in:login` : "";
   if (location) query += ` location:${location}`;
   if (minRepos) query += ` repos:>=${minRepos}`;
