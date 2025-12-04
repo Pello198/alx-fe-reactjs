@@ -24,7 +24,7 @@ export default function Search() {
       setTotalCount(data.total_count);
 
       if (data.items.length === 0) {
-        setError("Looks like we can't find the user");
+        setError("Looks like we cant find the user");
       }
 
     } catch (err) {
