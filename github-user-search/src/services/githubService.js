@@ -7,14 +7,13 @@ export const fetchUserData = async (username, location, minRepos, page = 1) => {
   if (location) query += ` location:${location}`;
   if (minRepos) query += ` repos:>=${minRepos}`;
 
-  const response = await axios.get(`https://api.github.com/search/users`, {
+const response = await axios.get(
+  `https://api.github.com/search/users?q=${query}&per_page=10&page=${page}`,
+  {
     headers: token ? { Authorization: `token ${token}` } : {},
-    params: {
-      q: query,
-      per_page: 10,
-      page: page,
-    },
-  });
+  }
+);
+
 
   const users = response.data.items;
 
