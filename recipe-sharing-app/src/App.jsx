@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useRecipeStore } from './components/recipeStore';
-import { Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import SearchBar from './components/SearchBar';
 import RecipeList from './components/RecipeList';
@@ -17,33 +17,35 @@ function App() {
   }, []);
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Recipe Sharing App</h1>
+    <Router>
+      <div style={{ padding: '2rem' }}>
+        <h1>Recipe Sharing App</h1>
 
-      <nav style={{ marginBottom: '2rem' }}>
-        <Link to="/" style={{ marginRight: '1rem' }}>Home</Link>
-        <Link to="/favorites" style={{ marginRight: '1rem' }}>Favorites</Link>
-        <Link to="/recommendations">Recommendations</Link>
-      </nav>
+        <nav style={{ marginBottom: '2rem' }}>
+          <Link to="/" style={{ marginRight: '1rem' }}>Home</Link>
+          <Link to="/favorites" style={{ marginRight: '1rem' }}>Favorites</Link>
+          <Link to="/recommendations">Recommendations</Link>
+        </nav>
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <SearchBar />
-              <AddRecipeForm />
-              <hr />
-              <RecipeList />
-            </>
-          }
-        />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <SearchBar />
+                <AddRecipeForm />
+                <hr />
+                <RecipeList />
+              </>
+            }
+          />
 
-        <Route path="/recipes/:id" element={<RecipeDetails />} />
-        <Route path="/favorites" element={<FavoritesList />} />
-        <Route path="/recommendations" element={<RecommendationsList />} />
-      </Routes>
-    </div>
+          <Route path="/recipes/:id" element={<RecipeDetails />} />
+          <Route path="/favorites" element={<FavoritesList />} />
+          <Route path="/recommendations" element={<RecommendationsList />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
