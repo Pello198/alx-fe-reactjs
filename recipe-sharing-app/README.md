@@ -1,16 +1,103 @@
-# React + Vite
+📘 Recipe Sharing Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for browsing, creating, and sharing recipes. Built with React (Vite) and styled using Tailwind CSS, this platform provides a clean, responsive, and user-friendly interface for users to interact with recipe content.
 
-Currently, two official plugins are available:
+🍽️ Project Functionalities
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The Recipe Sharing Platform includes the following core features:
 
-## React Compiler
+✅ 1. Browse Recipes
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Users can view a list of available recipes on the homepage.
 
-## Expanding the ESLint configuration
+Recipes include images, titles, preparation time, and brief descriptions.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Tailwind CSS ensures clean, responsive layout across devices.
+
+✅ 2. View Detailed Recipe Information
+
+Clicking a recipe opens a dedicated details page.
+
+Users can view:
+
+Full ingredients list
+
+Preparation steps
+
+Recipe difficulty
+
+Estimated cooking time
+
+Recipe image
+
+Layout optimized for readability and clarity.
+
+✅ 3. Add a New Recipe
+
+A structured form allows users to submit their own recipes.
+
+The form collects:
+
+Recipe name
+
+Ingredients
+
+Steps
+
+Image URL (or upload in future versions)
+
+Categories (e.g., breakfast, dessert, vegan)
+
+Validation ensures required fields are filled.
+
+✅ 4. Responsive User Interface
+
+The entire platform is fully responsive.
+
+Tailwind utility classes enable consistent UI design across:
+
+Mobile
+
+Tablet
+
+Desktop
+
+✅ 5. Client-Side Routing (React Router)
+
+Smooth navigation between:
+
+Home
+
+Recipe Details
+
+Add New Recipe
+
+(Optional future pages: Favorites, Profile, etc.)
+
+No page reloads required.
+
+✅ 6. Future Planned Features
+
+Search functionality
+
+Sorting and filtering by category or difficulty
+
+Favorite recipes saved to local storage
+
+User accounts and authentication
+
+Image uploads
+
+Comments or ratings for recipes
+
+🛠 Technologies Used
+
+React (Vite)
+
+Tailwind CSS
+
+React Router
+
+JavaScript (ES6+)
+
+Node.js & npm
