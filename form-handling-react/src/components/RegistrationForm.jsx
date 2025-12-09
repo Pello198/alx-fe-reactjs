@@ -1,82 +1,51 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default function RegistrationForm() {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
-
-  const [error, setError] = useState("");
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  // State for form fields
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Basic validation
-    if (!formData.username || !formData.email || !formData.password) {
-      setError("All fields are required");
+    if (!username || !email || !password) {
+      alert("All fields are required!");
       return;
     }
-
-    setError("");
-    console.log("Form submitted:", formData);
-
-    // Mock API call (simulation)
-    fetch("https://jsonplaceholder.typicode.com/users", {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((res) => res.json())
-      .then((data) => console.log("API Response:", data));
+    console.log({ username, email, password });
+    // You can send data to API here
   };
 
   return (
-    <div>
-      <h2>Controlled Component Form</h2>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>Username:</label>
+        <input
+          type="text"
+          value={username}            // <- controlled
+          onChange={(e) => setUsername(e.target.value)}
+        />
+      </div>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      <div>
+        <label>Email:</label>
+        <input
+          type="email"
+          value={email}               // <- controlled
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Username:</label>
-          <input
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            type="text"
-          />
-        </div>
+      <div>
+        <label>Password:</label>
+        <input
+          type="password"
+          value={password}            // <- controlled
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
 
-        <div>
-          <label>Email:</label>
-          <input
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            type="email"
-          />
-        </div>
-
-        <div>
-          <label>Password:</label>
-          <input
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            type="password"
-          />
-        </div>
-
-        <button type="submit">Register</button>
-      </form>
-    </div>
+      <button type="submit">Register</button>
+    </form>
   );
 }
